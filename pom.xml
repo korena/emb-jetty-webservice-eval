@@ -7,6 +7,7 @@
     <groupId>com.app.test</groupId>
     <artifactId>embedded_jetty_evaluate</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -14,6 +15,7 @@
         <jetty.server.version>9.2.1.v20140609</jetty.server.version>
         <jetty.webapp.version>9.2.1.v20140609</jetty.webapp.version>
         <jetty.util.version>9.2.1.v20140609</jetty.util.version>
+        <jetty.plus.version>9.2.1.v20140609</jetty.plus.version>
         <weld.version>2.1.2.Final</weld.version>
     </properties>
 
@@ -38,7 +40,7 @@
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-plus</artifactId>
-            <version>9.1.0.v20131115</version>
+            <version>${jetty.plus.version}</version>
         </dependency>
         <!--java web api dependency-->
         <dependency>
@@ -167,7 +169,7 @@
                                 <artifactItem>
                                     <groupId>javax</groupId>
                                     <artifactId>javaee-endorsed-api</artifactId>
-                                    <version>6.0</version>
+                                    <version>7.0</version>
                                     <type>jar</type>
                                 </artifactItem>
                             </artifactItems>
@@ -191,6 +193,4 @@
             </plugin>
         </plugins>
    </build>
-
-
 </project>
