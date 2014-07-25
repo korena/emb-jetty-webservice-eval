@@ -37,7 +37,7 @@ public class JServer {
         webapp.prependServerClass("org.eclipse.jetty.servlet.ServletContextHandler.Decorator");
         webapp.setServer(embed_server);
         embed_server.setHandler(webapp);
-        new org.eclipse.jetty.plus.jndi.Resource(webapp,"BeanManager", new Reference("javax.enterprise.inject.spi.BeanManager","org.jboss.weld.resources.ManagerObjectFactory",null));
+//        new org.eclipse.jetty.plus.jndi.Resource(webapp,"BeanManager", new Reference("javax.enterprise.inject.spi.BeanManager","org.jboss.weld.resources.ManagerObjectFactory",null));
         embed_server.start();
         embed_server.join();
     }
