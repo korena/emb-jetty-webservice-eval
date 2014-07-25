@@ -3,6 +3,7 @@ package com.app.servlets;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import java.io.Serializable;
 /**
  * Created by korena on 7/25/14.
  */
+
 public class TheServlet extends HttpServlet implements Serializable {
     /**
      * logger
