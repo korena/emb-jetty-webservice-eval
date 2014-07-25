@@ -23,6 +23,7 @@ public class JServer {
         org.eclipse.jetty.webapp.Configuration.ClassList classlist = org.eclipse.jetty.webapp.Configuration.ClassList.setServerDefault(embed_server);
         // this line sets up the server to pick up JNDI related configurations in override-web.xml. This is a direct copy of the documentation.
         classlist.addAfter("org.eclipse.jetty.webapp.FragmentConfiguration", "org.eclipse.jetty.plus.webapp.EnvConfiguration", "org.eclipse.jetty.plus.webapp.PlusConfiguration");
+        classlist.addBefore("org.eclipse.jetty.webapp.JettyWebXmlConfiguration", "org.eclipse.jetty.annotations.AnnotationConfiguration");
 
 
         ProtectionDomain domain = JServer.class.getProtectionDomain();

@@ -16,6 +16,7 @@
         <jetty.webapp.version>9.2.1.v20140609</jetty.webapp.version>
         <jetty.util.version>9.2.1.v20140609</jetty.util.version>
         <jetty.plus.version>9.2.1.v20140609</jetty.plus.version>
+        <jetty.annotations.version>9.2.1.v20140609</jetty.annotations.version>
         <weld.version>2.1.2.Final</weld.version>
     </properties>
 
@@ -36,6 +37,21 @@
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-util</artifactId>
             <version>${jetty.util.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-annotations</artifactId>
+            <version>${jetty.annotations.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>5.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.2</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
@@ -182,7 +198,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.eclipse.jetty,javax.servlet,ch.qos.logback,org.slf4j</includeGroupIds>
+                            <includeGroupIds>org.eclipse.jetty,javax.servlet,javax.annotation,org.ow2.asm,ch.qos.logback,org.slf4j</includeGroupIds>
                             <excludes>about.html,META-INF/**/*,images/**/*,.options</excludes>
                             <outputDirectory>
                                 ${project.build.directory}/${project.artifactId}-${project.version}

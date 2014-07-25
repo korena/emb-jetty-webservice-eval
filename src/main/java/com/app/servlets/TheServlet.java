@@ -15,6 +15,7 @@ import java.io.Serializable;
  * Created by korena on 7/25/14.
  */
 
+@WebServlet(name = "TheServlet", urlPatterns = {"/testServlet"})
 public class TheServlet extends HttpServlet implements Serializable {
     /**
      * logger
