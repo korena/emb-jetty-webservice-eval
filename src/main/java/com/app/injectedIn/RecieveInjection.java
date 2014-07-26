@@ -12,9 +12,13 @@ public class RecieveInjection {
     @Inject
     Injectable injectable;
 
-    public void useInjected(){
+    @Inject
+    public RecieveInjection() {
+    }
 
-        injectable.method();
+    public String useInjected(){
+
+       return injectable.method();
     }
 
 }

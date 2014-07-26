@@ -2,6 +2,7 @@ package com.app.injectees;
 
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
 import java.io.Serializable;
 
 /**
@@ -13,12 +14,14 @@ public class Injectable implements Serializable {
 
     private String string = "I am not initialized yet.";
 
+    @Inject
     public Injectable(){
         this.string = "I am initialized";
     }
 
-    public void method(){
-        logger.info("\nThe injectable object says:"+string+"\n");
+    public String method(){
+        logger.debug("\nThe injectable object says:"+string+"\n");
+        return "I am injected in an object that is then injected into the servlet that sent you this text.";
     }
 
 }

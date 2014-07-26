@@ -1,7 +1,9 @@
 package com.app.servlets;
 
+import com.app.injectedIn.RecieveInjection;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,6 +24,14 @@ public class TheServlet extends HttpServlet implements Serializable {
      */
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(TheServlet.class);
 
+    @Inject
+    private
+    RecieveInjection ri;
+
+
+
+
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -37,10 +47,19 @@ public class TheServlet extends HttpServlet implements Serializable {
         response.setHeader("Cache-control", "no-cache, no-store");
         response.setHeader("Pragma", "no-cache");
         response.setHeader("Expires", "-1");
-        String structName = request.getParameter("sname");
+
+
+
         try (PrintWriter out = response.getWriter()) {
-            out.println("I am alive!");
+            try {
+                out.println(ri.useInjected());
+            }catch(NullPointerException npe){
+                out.println("Injection problem ... I think weld did not scan the injectable classes ...");
+                logger.debug("\nSomething went terribly wrong @-@ ... here's the stack trace:\n");
+                npe.printStackTrace();
+            }
         }
+
     }
     /**
      * Handles the HTTP <code>GET</code> method.
