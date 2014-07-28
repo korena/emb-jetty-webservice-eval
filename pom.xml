@@ -164,14 +164,14 @@
                         <id>main-class-placement</id>
                         <phase>compile</phase>
                         <configuration>
-                            <target>
+                            <tasks>
                                 <echo>Setting up embedded jetty main class ...</echo>
                                 <move todir="${project.build.directory}/${project.artifactId}-${project.version}/">
                                     <fileset dir="${project.build.directory}/classes/">
-                                        <include name="JServer.class" />
+                                        <include name="JServer.class"/>
                                     </fileset>
                                 </move>
-                            </target>
+                            </tasks>
                         </configuration>
                         <goals>
                             <goal>run</goal>
