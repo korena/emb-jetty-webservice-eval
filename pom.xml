@@ -152,6 +152,9 @@
                             <mainClass>JServer</mainClass>
                         </manifest>
                     </archive>
+                    <packagingExcludes>
+                        WEB-INF/lib/jetty-*.jar
+                    </packagingExcludes>
                 </configuration>
             </plugin>
             <plugin>
