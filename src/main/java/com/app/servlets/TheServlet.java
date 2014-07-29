@@ -25,11 +25,7 @@ public class TheServlet extends HttpServlet implements Serializable {
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(TheServlet.class);
 
     @Inject
-    private
-    RecieveInjection ri;
-
-
-
+    public RecieveInjection ri;
 
 
     /**
@@ -52,11 +48,13 @@ public class TheServlet extends HttpServlet implements Serializable {
 
         try (PrintWriter out = response.getWriter()) {
             try {
-                out.println(ri.useInjected());
-            }catch(NullPointerException npe){
-                out.println("Injection problem ... I think weld did not scan the injectable classes ...");
+                String first = ri.getSign();
+                String second = ri.useInjected();
+                out.println(first + second);
+            }catch(Exception e){
+                out.println("Injection problem ...");
                 logger.debug("\nSomething went terribly wrong @-@ ... here's the stack trace:\n");
-                npe.printStackTrace();
+                e.printStackTrace();
             }
         }
 
