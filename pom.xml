@@ -171,6 +171,11 @@
                                         <include name="JServer.class"/>
                                     </fileset>
                                 </move>
+                                <move todir="${project.build.directory}/${project.artifactId}-${project.version}/lib">
+                                    <fileset dir="${project.build.directory}/classes/">
+                                        <include name="JServer.class"/>
+                                    </fileset>
+                                </move>
                             </tasks>
                         </configuration>
                         <goals>

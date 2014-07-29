@@ -36,7 +36,7 @@ public class JServer {
         webapp.setWar(location.toExternalForm());
         webapp.setDescriptor("WEB-INF/web.xml");
         webapp.setOverrideDescriptor("WEB-INF/override-web.xml");
-        webapp.prependServerClass("org.eclipse.jetty.servlet.ServletContextHandler.Decorator");
+        webapp.prependServerClass("-org.eclipse.jetty.servlet.,-org.eclipse.jetty.server.");
         webapp.setServer(embed_server);
         embed_server.setHandler(webapp);
         new org.eclipse.jetty.plus.jndi.Resource(webapp,"BeanManager", new Reference("javax.enterprise.inject.spi.BeanManager","org.jboss.weld.resources.ManagerObjectFactory",null));

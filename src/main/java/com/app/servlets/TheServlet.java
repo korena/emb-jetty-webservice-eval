@@ -1,6 +1,6 @@
 package com.app.servlets;
 
-import com.app.injectedIn.RecieveInjection;
+import com.app.injectedIn.ReceiveInjection;
 import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
@@ -18,14 +18,13 @@ import java.io.Serializable;
  */
 
 @WebServlet(name = "TheServlet", urlPatterns = {"/testServlet"})
-public class TheServlet extends HttpServlet implements Serializable {
+public class TheServlet extends HttpServlet{
     /**
      * logger
      */
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(TheServlet.class);
 
-    @Inject
-    public RecieveInjection ri;
+    public @Inject ReceiveInjection ri;
 
 
     /**

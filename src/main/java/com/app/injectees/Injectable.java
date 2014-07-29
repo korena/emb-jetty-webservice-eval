@@ -15,11 +15,9 @@ public class Injectable implements Serializable {
 
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(Injectable.class);
 
-    private String string = "I am not initialized yet.";
+    String string = "I am not initialized yet.";
 
-    @Inject
     public Injectable(){
-        this.string = "I am initialized";
     }
 
     public String method(){

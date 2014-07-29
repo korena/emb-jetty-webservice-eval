@@ -10,17 +10,15 @@ import java.io.Serializable;
  * Created by korena on 7/25/14.
  */
 @SessionScoped
-public class RecieveInjection implements Serializable {
+public class ReceiveInjection implements Serializable {
 
-    @Inject
-    Injectable injectable;
-
+    @Inject Injectable injectable;
     private String sign;
 
 
 
-    @Inject
-    public RecieveInjection() {
+
+    public ReceiveInjection() {
         this.sign = "I am here!";
     }
 
