@@ -19,16 +19,17 @@ and I am sure expert eyes can enhance and improve, your help is most welcome and
 Prerequisites:
 
 Development machine:
-java 1.7
-maven, preferably 3.0.5
-
+1. java 1.7
+2. maven, preferably 3.0.5
+3. Linux machine (others might work, but I don't know if setup steps wold work exactly the same)
 Deployment machine:
-java 1.7
+1. Linux Server (Not really required, but recommended)
+2. JVM 1.7 (change the necessary POM dependencies for 1.6, but don't go bellow!)
 
 
 Setup:
 
-1. clone the project.
+1. clone the project, cd into directory.
 2. run "mvn clean package"
 3. run "java -jar webapp.war"
 4. browse to  "http://localhost:8080/webapp"    for static contents
