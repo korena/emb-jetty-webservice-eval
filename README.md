@@ -1,4 +1,4 @@
-emb-jetty-webservice-eval
+embedded jetty 9.2.2 webservices and CDI evaluation 
 =========================
 
 evaluation of embedded jetty as a server for jersey based web services 
@@ -23,7 +23,7 @@ java 1.7
 maven, preferably 3.0.5
 
 Deployment machine:
-java 1,7
+java 1.7
 
 
 Setup:
