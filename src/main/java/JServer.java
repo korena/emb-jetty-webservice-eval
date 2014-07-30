@@ -38,12 +38,6 @@ public class JServer {
         webapp.setDescriptor("WEB-INF/web.xml");
         webapp.setOverrideDescriptor("WEB-INF/override-web.xml");
         webapp.prependServerClass("-org.eclipse.jetty.servlet.,-org.eclipse.jetty.server.");
-
-//        jersey setup
-        ServletHolder jerseyServlet = webapp.addServlet(org.glassfish.jersey.servlet.ServletContainer.class, "/api/*");
-        jerseyServlet.setInitOrder(2);
-        jerseyServlet.setInitParameter("jersey.config.server.provider.packages", "com.app.rest");
-
         webapp.setServer(embed_server);
         embed_server.setHandler(webapp);
         new org.eclipse.jetty.plus.jndi.Resource(webapp,"BeanManager", new Reference("javax.enterprise.inject.spi.BeanManager","org.jboss.weld.resources.ManagerObjectFactory",null));
