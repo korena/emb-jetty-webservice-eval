@@ -31,7 +31,7 @@ Setup:
 1. clone the project.
 2. run "mvn clean package"
 3. run "java -jar webapp.war"
-4. browse to  http://localhost:8080/webapp    for static contents
-5. browse to  http://localhost:8080/webapp/testServlet    to test CDI injection in servlets.
-6. browse to  http://localhost:8080/webapp/api/Service/usrAuth    to test jersey.
+4. browse to  "http://localhost:8080/webapp"    for static contents
+5. browse to  "http://localhost:8080/webapp/testServlet"    to test CDI injection in servlets.
+6. browse to  "http://localhost:8080/webapp/api/Service/usrAuth"    to test jersey.
 7. suggest a fix or a better setup!
