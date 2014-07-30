@@ -20,7 +20,7 @@ Prerequisites:
 
 Development machine:
 
-1. java 1.7
+1. java 1.7  (change the necessary POM dependencies for 1.6, but don't go bellow!)
 2. maven, preferably 3.0.5
 3. Linux machine (others might work, but I don't know if setup steps wold work exactly the same)
  
