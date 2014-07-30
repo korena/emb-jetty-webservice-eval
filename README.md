@@ -13,7 +13,7 @@ This is an adaptation from an old embedded jetty setup. Basically, the following
 This project is based on maven, which is arguably the most sensible way to work with java applications. I tried my best to stay as close
 to the standard WAR deployable web application setup as possible, and will probably re-iterate on the setup for production. One major divergence
 from the standard is the jetty dependency unpacked packages at the root directory of the WAR, for the sake of completely elimination the need
-for JavaEE containers on the deployment server, and limiting Server requirements to a working JVM. So I could develop my application by runing "java -jar webapp.war" on the production server. There are a couple of issues that make dealing with this project's setup a bit unconventional, 
+for JavaEE containers on the deployment server, and limiting Server requirements to a working JVM. So I could deploy my application by runing "java -jar webapp.war" on the production server. There are a couple of issues that make dealing with this project's setup a bit unconventional, 
 and I am sure expert eyes can enhance and improve, your help is most welcome and appreciated!
 
 Prerequisites:
