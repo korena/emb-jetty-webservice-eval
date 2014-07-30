@@ -1,13 +1,14 @@
-import java.io.File;
-import java.net.URL;
-import java.security.ProtectionDomain;
-
+import com.app.rest.TheService;
 import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.webapp.WebAppContext;
+import org.glassfish.jersey.jackson.JacksonFeature;
+import org.glassfish.jersey.server.ResourceConfig;
 import org.slf4j.LoggerFactory;
 
-import javax.annotation.Resource;
 import javax.naming.Reference;
+import java.net.URL;
+import java.security.ProtectionDomain;
 
 public class JServer {
 
@@ -37,6 +38,12 @@ public class JServer {
         webapp.setDescriptor("WEB-INF/web.xml");
         webapp.setOverrideDescriptor("WEB-INF/override-web.xml");
         webapp.prependServerClass("-org.eclipse.jetty.servlet.,-org.eclipse.jetty.server.");
+
+//        jersey setup
+        ServletHolder jerseyServlet = webapp.addServlet(org.glassfish.jersey.servlet.ServletContainer.class, "/api/*");
+        jerseyServlet.setInitOrder(2);
+        jerseyServlet.setInitParameter("jersey.config.server.provider.packages", "com.app.rest");
+
         webapp.setServer(embed_server);
         embed_server.setHandler(webapp);
         new org.eclipse.jetty.plus.jndi.Resource(webapp,"BeanManager", new Reference("javax.enterprise.inject.spi.BeanManager","org.jboss.weld.resources.ManagerObjectFactory",null));
