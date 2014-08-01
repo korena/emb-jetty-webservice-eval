@@ -41,14 +41,14 @@ Setup:
 6. browse to  "http://localhost:8080/webapp/api/Service/usrAuth"    to test jersey.
 7. suggest a fix or a better setup!
 
-Debugging:
+Debugging:  (better done after compiling with the -g flag)
 
 The way I do it (rather primitive I know, but I can't bother learning the ways of an IDE) is by running:
 
 java -Xdebug -Xrunjdwp:transport=dt_socket,address=8800,server=y,suspend=y \  
 -jar ./target/embedded_jetty_evaluate-1.0-SNAPSHOT.war
 
-from the project's root directory, this will have your jvm listen (and wait) on port 8800 for a debugger to be attached,
+from the project's root directory, this will have your jvm (or rather the java process that runs your application) listen (and wait) on port 8800 for a debugger to be attached,
 I usually use NetBeans (pass the port number in the Debug>attach debugger dialog).
 
 
