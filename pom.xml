@@ -83,11 +83,6 @@
             <artifactId>jersey-container-servlet</artifactId>
             <version>${jersey.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.glassfish.jersey.media</groupId>
-            <artifactId>jersey-media-json-jackson</artifactId>
-            <version>${jersey.version}</version>
-        </dependency>
         <!--Im not using jsp, but weld makes an explicit include for jsp stuff for some reason.-->
         <dependency>
             <groupId>javax.servlet</groupId>

@@ -1,5 +1,8 @@
 package com.app.rest;
 
+import com.app.injectees.Injectable;
+
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -13,10 +16,14 @@ import javax.ws.rs.core.MediaType;
 @Path("Service")
 public class TheService {
 
+    @Inject
+    Injectable injectable;
+
     @GET
+    @Path("/getInjected")
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
-        return "Got it!";
+        return injectable.method();
     }
 
     @GET
