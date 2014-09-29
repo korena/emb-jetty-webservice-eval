@@ -60,6 +60,18 @@
         </dependency>
         <!--java web api dependency-->
         <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.32</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-all</artifactId>
+            <version>5.10.0</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
@@ -231,7 +243,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.eclipse.jetty,javax.servlet,javax.annotation,org.ow2.asm,ch.qos.logback,org.slf4j</includeGroupIds>
+                            <includeGroupIds>org.eclipse.jetty,javax.servlet,javax.annotation,org.ow2.asm,ch.qos.logback,org.slf4j,org.apache.activemq,mysql</includeGroupIds>
                             <excludes>about.html,META-INF/**/*,images/**/*,.options</excludes>
                             <outputDirectory>
                                 ${project.build.directory}/${project.artifactId}-${project.version}
