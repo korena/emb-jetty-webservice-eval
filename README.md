@@ -39,7 +39,8 @@ Setup:
 4. browse to  "http://localhost:8080/webapp"    for static contents
 5. browse to  "http://localhost:8080/webapp/testServlet"    to test CDI injection in servlets.
 6. browse to  "http://localhost:8080/webapp/api/Service/usrAuth"    to test jersey.
-7. suggest a fix or a better setup!
+7. browse to  "http://localhost:8080/webapp/api/Service/injection"  to test dependency injection in jersey service
+8. suggest a fix or a better setup!
 
 Debugging:  (better done after compiling with the -g flag)
 
