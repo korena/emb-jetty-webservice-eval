@@ -24,7 +24,7 @@ public class ReceiveInjection implements Serializable {
 
     public String useInjected(){
         if (injectable == null) return "injectable is null";
-       return injectable.method();
+       return injectable.method(null);
     }
 
     public String getSign() {
